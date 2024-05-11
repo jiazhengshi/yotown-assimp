@@ -38,6 +38,14 @@ See [the complete list of supported formats](https://github.com/assimp/assimp/bl
 ### Building ###
 Start by reading [our build instructions](https://github.com/assimp/assimp/blob/master/Build.md). We are available in vcpkg, and our build system is CMake; if you used CMake before there is a good chance you know what to do.
 
+### iOS Build
+1. cd yotown-assimp/port/iOS/
+2. ./build.sh
+3. after that, you have "libassimp.a" in assimp/lib/iOS/arm64(we preferred arm64)
+4. create folder named "assimpLib" in Xcode and copy libassimp.a and assimp/include folder(header files) in it.
+5. add path for the assimpLib in Header Search Path in Xcode Build setting, just like $(PROJECT_DIR)/MY_PROJECT/assimpLib
+6. setting all done, now you can write a c++ wrapper file call ASSIMP function via swift.
+
 ### Ports ###
 * [Android](port/AndroidJNI/README.md)
 * [Python](port/PyAssimp/README.md)
